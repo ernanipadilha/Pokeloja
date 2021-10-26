@@ -1,0 +1,41 @@
+body {
+    font-family: "Roboto Mono", monospace;
+    background-image: url("/src/img/pokeball.jpg");
+}
+
+.menu {
+    display: flex;
+    align-items: flex-start;
+    background-color: #CC0000;
+    color: black;
+    width: auto;
+    height: 50px;
+    padding: 5px;
+}
+
+.menu h1 {
+    margin: 0;
+}
+
+.menu input {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 23px;
+    border-radius: 5px;
+}
+
+.menu button {
+    margin-top: 10px;
+}
+
+.submenu {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+}
