@@ -2,8 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
     font-family: 'Press Start 2P', cursive;
-    background-image: url("src/img/pokeball_2.png");
     background-color: #FCE77C;
+    background-image: url("src/img/pokeball_2.png");
+    background-size: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 162px;
 }
 
 .menu {
@@ -12,31 +19,36 @@ body {
     background-color: #CC0000;
     color: black;
     width: auto;
-    height: 100px;
+    height: 150px;
     padding: 5px;
 }
 
 .menu h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 30px;
+    color: #FFDE00;
+    -webkit-text-stroke: 1px #3B4CCA;
+    font-size: 40px;
+    margin-left: 40px;
     font-family: 'Pokemon Solid', sans-serif;
 }
 
-.menu input {
+.busca form{
+    display: flex;
+    margin-top: 65px;
+    padding: 4px;
+    margin-left: 50px;
+}
+
+ .busca form>input {
     font-family: 'Pokemon Solid', sans-serif;
-    margin-top: 35px;
-    margin-left: 10px;
-    height: 23px;
-    border-radius: 5px;
-    font-size: 20px;
     height: 40px;
+    font-size: 20px;
 }
 
-.menu button {
-    margin-top: 35px;
-    font-size: 30px;
-    border-radius: 50px;
+.busca form>button {
+    background: royalblue;
+    border: none;
+    color: #fff;
+    padding: 4px 10px
 }
 
 .submenu {
@@ -54,6 +66,7 @@ a {
 }
 
 main {
+    margin-left: 50px;
     background-color: #EDF6E9;
 }
 
@@ -61,11 +74,10 @@ main {
     justify-content: center;
     font-size: 15px;
     display: grid;
-    width: 1000px;
+    margin-top: 183px;
     grid-template-columns: 25% 25% 25% 25%;
     padding: 15px;
     align-content: center;
-    margin: 0;
 }
 
 .content div {
@@ -74,26 +86,43 @@ main {
     border: 2px solid #000;
     border-radius: 20px;
     margin: 5px;
-    height: 350px;
+    height: 400px;
     padding: 10px;
     text-align: center;
 }
 
-
+.oldValue {
+    font-size: 10px;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
 
 .content button {
     font-family: 'Press Start 2P', cursive;
     border-radius: 50px;
     border-color: #7AC89E;
     background-color: #7AC89E;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .grid {
-    width: auto;
+    display: grid;
     grid-template-columns: 30% 30% 40%;
     grid-template-rows: 30px auto 40px;
-    grid-template-areas: "header header header" "content content sidenav" "footer footer footer";
+    grid-template-areas: 'header header header' 'content content sidenav' 'footer footer footer';
+}
+
+.sidenav {
+    background-color: #DFE5F2;
+    margin-left: 40px;
+    margin-top: 183px;
+    padding: 15px;
+    width: 400px;
+}
+
+footer {
+    background-color: #000000;
+    height: 300px;
 }
 
 header {
