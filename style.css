@@ -23,11 +23,27 @@ header {
     padding: 5px;
 }
 
+.pokespin {
+  max-width: 100px;
+  margin-top: 20px;
+  margin-left: 20px;
+  animation: pokespin 2s infinite linear
+}
+
+@keyframes pokespin {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
 .menu h1 {
     color: #FFDE00;
     -webkit-text-stroke: 1px #3B4CCA;
     font-size: 40px;
-    margin-left: 40px;
+    margin-left: 35px;
     font-family: 'Pokemon Solid', sans-serif;
 }
 
