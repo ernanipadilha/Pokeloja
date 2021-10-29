@@ -9,9 +9,7 @@ body {
     padding: 0;
 }
 
-header {
-    height: 162px;
-}
+
 
 .menu {
     display: flex;
@@ -90,7 +88,7 @@ main {
     justify-content: center;
     font-size: 15px;
     display: grid;
-    margin-top: 183px;
+    /* margin-top: 183px; */
     grid-template-columns: 25% 25% 25% 25%;
     padding: 15px;
     align-content: center;
@@ -124,14 +122,14 @@ main {
 .grid {
     display: grid;
     grid-template-columns: 30% 30% 40%;
-    grid-template-rows: 30px auto 40px;
+    /*grid-template-rows: 30px auto 40px;*/
     grid-template-areas: 'header header header' 'content content sidenav' 'footer footer footer';
 }
 
 .sidenav {
     background-color: #DFE5F2;
     margin-left: 40px;
-    margin-top: 183px;
+    /* margin-top: 183px; */
     padding: 15px;
     width: 400px;
 }
