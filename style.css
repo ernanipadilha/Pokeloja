@@ -145,6 +145,50 @@ main {
     width: 400px;
 }
 
+aside {
+    padding-left: 30px;
+    width: 25%;
+}
+
+aside .poke-ad {
+    display: block;
+    height: 250px;
+    background-image: url("src/img/mewtwo.jpg");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+aside .poke-ad::before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+aside .poke-ad>div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+aside .poke-ad .poke-ads-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+}
+
+aside .poke-ad .poke-ads-description {
+    font-size: 11px;
+}
+
 .topPokemon h3 {
     text-transform: uppercase;
     font-weight: bold;
@@ -153,12 +197,39 @@ main {
     margin: 0;
 }
 
+
+.pokeTop {
+    max-width: 50px;
+}
+
+.topPokemon ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.topPokemon li {
+    counter-increment: li;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: solid 1px #EEE;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+.topPokemon li:hover {
+    background: #EEE;
+}
+
 .topPokemon li::before {
     content: counter(li) "º";
     font-size: 36px;
     font-weight: bold;
     line-height: 0;
 }
+
+
 
 .novidades {
     border: 2px groove #000;
@@ -191,17 +262,29 @@ main {
     margin-top: 15px;
 }
 
-.pokeTop {
+/* Inicio do footer */
+
+.top-footer section{
     max-width: 50px;
 }
 
-.topPokemon ol {
+.top-footer h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #DFE5F2;
+    border-bottom: solid 1px #DDD;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.top-footer ol {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.topPokemon li {
+.top-footer li {
+    color: #DDD;
     counter-increment: li;
     display: flex;
     align-items: center;
@@ -211,8 +294,20 @@ main {
     cursor: pointer;
 }
 
-.topPokemon li:hover {
+.top-footer li:hover {
     background: #EEE;
+    color: #000;
+}
+
+.top-footer li::before {
+    content: counter(li) "º";
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+footer {
+    background-color: #000000; 
 }
 
 .grid {
@@ -222,10 +317,6 @@ main {
     grid-template-areas: 'header header header' 'content content sidenav' 'footer footer footer';
 }
 
-footer {
-    background-color: #000000;
-    height: 300px;
-}
 
 header {
     grid-area: header;
