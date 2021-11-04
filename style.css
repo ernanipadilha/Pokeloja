@@ -1,5 +1,9 @@
 @import url('http://fonts.cdnfonts.com/css/pokemon-solid');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Press Start 2P', cursive;
     background-color: #FCE77C;
@@ -10,17 +14,12 @@ body {
 }
 
 .menu {
-    display: flex;
-    align-items: flex-start;
     background-color: #CC0000;
     color: black;
-    width: auto;
-    height: 150px;
-    padding: 5px;
 }
 
 .pokespin {
-    max-width: 100px;
+    max-width: 145px;
     margin-top: 20px;
     margin-left: 20px;
     animation: pokespin 2s infinite linear
@@ -39,15 +38,19 @@ body {
     color: #FFDE00;
     -webkit-text-stroke: 1px #3B4CCA;
     font-size: 40px;
-    margin-left: 35px;
+    margin-right: 50px;
     font-family: 'Pokemon Solid', sans-serif;
+}
+
+.busca {
+    display: flex;
+    
 }
 
 .busca form {
     display: flex;
     margin-top: 65px;
     padding: 4px;
-    margin-left: 50px;
 }
 
 .busca form>input {
@@ -60,7 +63,29 @@ body {
     background: royalblue;
     border: none;
     color: #fff;
-    padding: 4px 10px
+    padding: 4px 10px;
+    max-width: 45px;
+    max-height: 40px;
+}
+
+.links {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.links li{
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.links ul, a{
+    text-decoration: none;
+    color: #EDF6E9;
 }
 
 .submenu {
@@ -70,7 +95,8 @@ body {
     color: #FFF;
     padding: 15px 0;
 }
-.submenu li{
+
+.submenu li {
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -89,14 +115,21 @@ header .submenu nav a {
     margin: 0;
     padding: 0;
     list-style-type: none;
-
 }
+
 header .submenu nav ul li {
     border-right: solid 1px #EFEFEF;
-    }
+}
 
 header .submenu nav ul li:last-child {
     border-right: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: auto;
 }
 
 main {
@@ -108,7 +141,7 @@ main {
     justify-content: center;
     font-size: 15px;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 15px;
     align-content: center;
 }
@@ -169,6 +202,7 @@ aside .poke-ad::before {
     top: 0;
     left: 0;
 }
+
 aside .poke-ad>div {
     position: absolute;
     bottom: 0;
@@ -196,7 +230,6 @@ aside .poke-ad .poke-ads-description {
     padding: 10px 0;
     margin: 0;
 }
-
 
 .pokeTop {
     max-width: 50px;
@@ -228,8 +261,6 @@ aside .poke-ad .poke-ads-description {
     font-weight: bold;
     line-height: 0;
 }
-
-
 
 .novidades {
     border: 2px groove #000;
@@ -264,7 +295,7 @@ aside .poke-ad .poke-ads-description {
 
 /* Inicio do footer */
 
-.top-footer section{
+.top-footer section {
     max-width: 50px;
 }
 
@@ -307,7 +338,7 @@ aside .poke-ad .poke-ads-description {
 }
 
 footer {
-    background-color: #000000; 
+    background-color: #000000;
 }
 
 .grid {
@@ -316,7 +347,6 @@ footer {
     /*grid-template-rows: 30px auto 40px;*/
     grid-template-areas: 'header header header' 'content content sidenav' 'footer footer footer';
 }
-
 
 header {
     grid-area: header;
