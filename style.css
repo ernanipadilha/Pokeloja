@@ -44,7 +44,6 @@ body {
 
 .busca {
     display: flex;
-    
 }
 
 .busca form {
@@ -78,12 +77,12 @@ body {
     list-style-type: none;
 }
 
-.links li{
+.links li {
     margin-left: 15px;
     text-decoration: none;
 }
 
-.links ul, a{
+.links ul, a {
     text-decoration: none;
     color: #EDF6E9;
 }
@@ -137,6 +136,10 @@ main {
     background-color: #EDF6E9;
 }
 
+.content-section {
+    margin-left: 200px;
+}
+
 .content {
     justify-content: center;
     font-size: 15px;
@@ -174,7 +177,6 @@ main {
 
 .sidenav {
     background-color: #DFE5F2;
-    margin-left: 40px;
     padding: 15px;
     width: 400px;
 }
@@ -296,50 +298,32 @@ aside .poke-ad .poke-ads-description {
 
 /* Inicio do footer */
 
-.top-footer section {
-    max-width: 50px;
-}
-
-.top-footer h3 {
-    text-transform: uppercase;
-    font-weight: bold;
+footer .topPokemon {
     color: #DFE5F2;
-    border-bottom: solid 1px #DDD;
-    padding: 10px 0;
-    margin: 0;
 }
 
-.top-footer ol {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.top-footer li {
-    color: #DDD;
-    counter-increment: li;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: solid 1px #EEE;
-    transition: all ease 0.3s;
-    cursor: pointer;
-}
-
-.top-footer li:hover {
-    background: #EEE;
+footer .topPokemon li:hover {
     color: #000;
-}
-
-.top-footer li::before {
-    content: counter(li) "º";
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 0;
+    background-color: #DFE5F2;
 }
 
 footer {
     background-color: #000000;
+}
+
+footer .social-links {
+    display: flex;
+}
+
+footer .social-links li {
+    margin-left: 15px;
+}
+
+.copyright {
+    padding: 10px;
+    font-size: 10px;
+    text-align: center;
+    background-color: #4A575D;
 }
 
 .grid {
