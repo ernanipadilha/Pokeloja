@@ -132,13 +132,9 @@ header .submenu nav ul li:last-child {
 }
 
 main {
-    margin-left: 50px;
     background-color: #EDF6E9;
 }
 
-.content-section {
-    margin-left: 200px;
-}
 
 .content {
     justify-content: center;
@@ -327,9 +323,9 @@ footer .social-links li {
 }
 
 .grid {
-    display: grid;
+    /*display: grid;
     grid-template-columns: 30% 30% 40%;
-    /*grid-template-rows: 30px auto 40px;*/
+    grid-template-rows: 30px auto 40px;*/
     grid-template-areas: 'header header header' 'content content sidenav' 'footer footer footer';
 }
 
