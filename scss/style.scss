@@ -1,0 +1,18 @@
+footer {
+    background-color: #000000;
+    .topPokemon {
+        color: #dfe5f2;
+        li {
+            &:hover {
+                color: #000;
+                background-color: #dfe5f2;
+            }
+        }
+    }
+    .social-links {
+        display: flex;
+        li {
+            margin-left: 15px;
+        }
+    }
+}
