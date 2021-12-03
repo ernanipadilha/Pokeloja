@@ -302,6 +302,7 @@ footer .topPokemon li:hover {
 
 .social-links {
   display: flex;
+  height: 40px;
 }
 .social-links a {
   text-decoration: none;
