@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.cdnfonts.com/css/pokemon-solid");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 * {
@@ -84,11 +85,13 @@ header .submenu {
   color: #fff;
   padding: 15px 0;
 }
-header .submenu li {
+
+.submenu li {
   margin-left: 5px;
   margin-right: 5px;
 }
-header .submenu nav a {
+
+.submenu nav a {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
@@ -96,17 +99,19 @@ header .submenu nav a {
   text-transform: uppercase;
   transition: all ease 0.2s;
 }
-header .submenu ul,
-header .submenu li {
+
+.submenu ul, li {
   display: flex;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-header .submenu nav ul li {
+
+.submenu nav ul li {
   border-right: solid 1px #efefef;
 }
-header .submenu:last-child {
+
+header .submenu nav ul li:last-child:last-child {
   border-right: none;
 }
 
@@ -143,9 +148,136 @@ main .oldValue {
   margin: auto;
 }
 
+/*Lateral*/
+.sidenav {
+  background-color: #DFE5F2;
+  padding: 15px;
+  width: 400px;
+}
+
+aside {
+  padding-left: 30px;
+  width: 25%;
+}
+
+aside .poke-ad {
+  display: block;
+  height: 250px;
+  background-image: url("../src/img/mewtwo.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+aside .poke-ad::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+aside .poke-ad > div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #FFF;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+aside .poke-ad .poke-ads-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+aside .poke-ad .poke-ads-description {
+  font-size: 12px;
+}
+
+.topPokemon h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: solid 1px #DDD;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.pokeTop {
+  max-width: 50px;
+}
+
+.topPokemon ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topPokemon li {
+  counter-increment: li;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: solid 1px #EEE;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.topPokemon li:hover {
+  background: #EEE;
+}
+
+.topPokemon li::before {
+  content: counter(li) "º";
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.novidades {
+  border: 2px groove #000;
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 30px 10px;
+  margin-left: 20px;
+  background-color: #FCF3E4;
+}
+
+.novidades h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0;
+  text-align: center;
+}
+
+.novidades input {
+  padding: 10px;
+  border: 0;
+  width: 90%;
+}
+
+.novidades button {
+  border: 0;
+  padding: 10px;
+  width: 100%;
+  background: #000;
+  color: #FFF;
+  margin-top: 15px;
+}
+
+/*Rodapé*/
 footer {
   background-color: #000000;
   font-family: "Pokemon Solid", sans-serif;
+}
+footer nav a {
+  text-decoration: none;
+  color: #FFF;
 }
 footer .topPokemon {
   color: #dfe5f2;
@@ -154,11 +286,22 @@ footer .topPokemon li:hover {
   color: #000;
   background-color: #dfe5f2;
 }
-footer .social-links {
+
+.social-links {
   display: flex;
 }
-footer .social-links li {
+.social-links a {
+  text-decoration: none;
+  color: #FFF;
+}
+.social-links ul {
+  color: #FFF;
+  text-decoration: none;
+}
+.social-links li {
+  text-decoration: none;
   margin-left: 15px;
+  color: #FFF;
 }
 
 /*# sourceMappingURL=style.css.map */
