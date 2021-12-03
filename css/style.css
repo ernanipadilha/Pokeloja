@@ -141,6 +141,15 @@ main .oldValue {
   opacity: 0.5;
 }
 
+.content button {
+  cursor: pointer;
+  font-family: "Press Start 2P", cursive;
+  border-radius: 50px;
+  border-color: #7AC89E;
+  background-color: #7AC89E;
+  font-size: 18px;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -262,6 +271,7 @@ aside .poke-ad .poke-ads-description {
 }
 
 .novidades button {
+  cursor: pointer;
   border: 0;
   padding: 10px;
   width: 100%;
@@ -281,6 +291,9 @@ footer nav a {
 }
 footer .topPokemon {
   color: #dfe5f2;
+}
+footer .topPokemon li {
+  font-size: 20px;
 }
 footer .topPokemon li:hover {
   color: #000;
