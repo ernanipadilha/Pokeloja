@@ -41,6 +41,10 @@ function btnProx() {
     btnProx.onclick = async () => {
         const response = await getPokemons(page += 1);
         listaPokemons(response.results);
+        window.scroll({
+            top: 100,
+            behavior: "smooth"
+        })
         temAnterior(page);
         calcPages(page)
     }
@@ -51,6 +55,10 @@ function btnAnt() {
     btnAnt.onclick = async () => {
         const response = await getPokemons(page -= 1);
         listaPokemons(response.results);
+        window.scroll({
+            top: 100,
+            behavior: "smooth"
+        })
         temAnterior(page)
         calcPages(page)
     }
