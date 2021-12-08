@@ -173,6 +173,12 @@ header .submenu nav ul li:last-child:last-child {
   border: 0;
   font-size: 15px;
 }
+.pagination .pages {
+  padding: 10px;
+  font-size: 20px;
+  margin-top: 10px;
+  background-color: #DDD;
+}
 
 /*Lateral*/
 .sidenav {
