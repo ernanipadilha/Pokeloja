@@ -1,6 +1,6 @@
 let page = 0;
 
-async function getPokemons(page) {
+async function getPokemons(page) {    
     const limit = 20;
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${limit * page}`);
