@@ -1,4 +1,5 @@
 @use "_fonts.scss";
+@use "_carrinho.scss";
 
 * {
     box-sizing: border-box;
@@ -157,7 +158,7 @@ header .submenu nav ul li:last-child:last-child {
 .container {
     display: flex;
     justify-content: space-between;
-    width: 1350px;
+    width: 1250px;
     margin: auto;
 }
 
@@ -180,9 +181,7 @@ header .submenu nav ul li:last-child:last-child {
     }
 }
 
-
 /*Lateral*/
-
 .sidenav {
     background-color: #DFE5F2;
     padding: 15px;
@@ -191,7 +190,7 @@ header .submenu nav ul li:last-child:last-child {
 
 aside {
     padding-left: 30px;
-    width: 25%;
+    
 }
 aside .poke-ad {
     display: block;
