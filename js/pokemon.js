@@ -1,4 +1,4 @@
-class Pokemon {
+class Pokemons {
     constructor(nome, url) {
         this.nome = nome;
         this.url = url;
@@ -9,11 +9,15 @@ class Pokemon {
     html() {
         const pokeDiv = document.createElement('div');
         pokeDiv.className = 'poke';
-        pokeDiv.innerHTML = `<img src="${this.image}" alt="${this.nome}">
+        pokeDiv.innerHTML = `
+        <a href="pokemon.html?id=${this.id}">
+        <img src="${this.image}" alt="${this.nome}">
         <p>${this.nome}</p>
         <p class="oldValue">R$ ${this.preco}</p>
         <p>R$ ${(this.preco * 0.8).toFixed(2)}</p>
-        <button>Comprar</button>`;
+        </a>
+        <button>Comprar</button>
+        `;
 
         return pokeDiv;
     }

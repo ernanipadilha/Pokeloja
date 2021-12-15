@@ -1,0 +1,39 @@
+.poke-details {
+  background-color: #edf6e9;
+  padding: 5px;
+  width: 50vw;
+  text-transform: capitalize;
+}
+.poke-details img {
+  margin-top: 30px;
+  margin-left: 15px;
+  border: solid 2px #000;
+  border-radius: 10px;
+  padding: 15px;
+}
+.poke-details h1 {
+  margin-top: 40px;
+}
+
+.error {
+  padding: 15px;
+  background-color: red;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.pokeball {
+  background-image: url("../src/img/charmander-ian-boschero.gif");
+  background-color: #edf6e9;
+  background-size: 150px;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=pokemon.css.map */

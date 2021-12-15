@@ -178,6 +178,10 @@ header .submenu nav ul li:last-child:last-child {
   padding: 15px;
   align-content: center;
 }
+.content a {
+  text-decoration: none;
+  color: #000;
+}
 .content div {
   display: grid;
   justify-content: center;
@@ -205,7 +209,14 @@ header .submenu nav ul li:last-child:last-child {
   border-radius: 50px;
   border-color: #7AC89E;
   background-color: #7AC89E;
-  font-size: 18px;
+  font-size: 20px;
+  transition: 3s;
+}
+
+.content button:hover {
+  transition: 3s;
+  background-color: #cc0000;
+  border-color: #cc0000;
 }
 
 .container {

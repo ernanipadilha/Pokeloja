@@ -42,7 +42,7 @@ function btnProx() {
         const response = await getPokemons(page += 1);
         listaPokemons(response.results);
         window.scroll({
-            top: 100,
+            top: 250,
             behavior: "smooth"
         })
         temAnterior(page);
@@ -56,7 +56,7 @@ function btnAnt() {
         const response = await getPokemons(page -= 1);
         listaPokemons(response.results);
         window.scroll({
-            top: 100,
+            top: 250,
             behavior: "smooth"
         })
         temAnterior(page)
@@ -67,7 +67,7 @@ function btnAnt() {
 function listaPokemons(pokemonsApi) {
     const pokeList = document.querySelector('.content');
     pokeList.innerHTML = '';
-    const pokemons = pokemonsApi.map((pokemon) => new Pokemon(pokemon.name, pokemon.url));
+    const pokemons = pokemonsApi.map((pokemon) => new Pokemons(pokemon.name, pokemon.url));
 
     pokemons.forEach((pokemon) => {
         const html = pokemon.html();
@@ -81,7 +81,7 @@ window.onload = async () => {
     const pokeList = document.querySelector('.content');
     pokeList.innerHTML = '<div>Carregando Pokemons....</div>';
 
-    carrinho();
+    if (window.carrinho) carrinho();
     const response = await getPokemons(page);
     listaPokemons(response.results);
     temAnterior(page);

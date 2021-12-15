@@ -4,9 +4,13 @@ function carrinho(){
         event.preventDefault();
         const openCartClass = 'carrinho-aberto'
         document.body.className.includes(openCartClass) ? document.body.className = '' : document.body.className = openCartClass;
-        
-    });
 
+        teclaPressionada = addEventListener('keydown', function(event){
+            if (event.key === 'Escape'){
+            document.body.className = '';
+        }
+    });
+    });
     const btnFecharCarrinho = document.querySelector('#fechar-carrinho');
     btnFecharCarrinho.addEventListener('click', function(event){    
         event.preventDefault();
@@ -16,10 +20,5 @@ function carrinho(){
     clickForaCart.addEventListener('click', function(event){
         event.preventDefault();
         document.body.className = '';
-    });
-    const teclaPressionada = addEventListener('keydown', function(event){
-            if (event.key === 'Escape'){
-            document.body.className = '';
-        }
-    });
+    }); 
 }
