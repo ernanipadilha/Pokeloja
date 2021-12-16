@@ -1,6 +1,8 @@
 let page = 0;
-
-async function getPokemons(page) {    
+async function getPokemons(page = 0) {  
+    const pokeList = document.querySelector('.content');
+    pokeList.innerHTML = '<div class="pokeball"></div> <p>Carregando pokemon!!!</p>';
+    
     const limit = 20;
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${limit * page}`);
@@ -63,10 +65,12 @@ function btnAnt() {
         calcPages(page)
     }
 }
-
-function listaPokemons(pokemonsApi) {
+const fakePromise = () => new Promise((resolve) => setTimeout(resolve, 3000));
+async function listaPokemons(pokemonsApi) {
+    await fakePromise();
     const pokeList = document.querySelector('.content');
     pokeList.innerHTML = '';
+
     const pokemons = pokemonsApi.map((pokemon) => new Pokemons(pokemon.name, pokemon.url));
 
     pokemons.forEach((pokemon) => {
@@ -78,14 +82,14 @@ function listaPokemons(pokemonsApi) {
 
 // Executa quando a página termina de carregar.
 window.onload = async () => {
-    const pokeList = document.querySelector('.content');
-    pokeList.innerHTML = '<div>Carregando Pokemons....</div>';
-
-    if (window.carrinho) carrinho();
     const response = await getPokemons(page);
+    
     listaPokemons(response.results);
+     
+    btnProx();
     temAnterior(page);
     calcPages(page);
-    btnProx();
     btnAnt();
+    
+    if (window.carrinho) carrinho();
 }

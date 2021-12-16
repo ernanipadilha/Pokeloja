@@ -133,7 +133,7 @@ header .submenu nav ul li:last-child:last-child {
         color: #000;
     }
 
-    div {
+    .poke {
         display: grid;
         justify-content: center;
         border: 2px solid #000;
@@ -172,7 +172,7 @@ header .submenu nav ul li:last-child:last-child {
 .container {
     display: flex;
     justify-content: space-between;
-    width: 1250px;
+    width: 1400px;
     margin: auto;
 }
 
@@ -354,4 +354,13 @@ footer {
         margin-left: 15px;
         color: #FFF;
     }
+}
+.pokeball {
+    background-image: url('../src/img/charmander-ian-boschero.gif');
+    background-color: #edf6e9;
+    background-size: 150px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    background-repeat: no-repeat;    
 }

@@ -1,7 +1,9 @@
 .poke-details {
+  display: flex;
   background-color: #edf6e9;
   padding: 5px;
   width: 50vw;
+  height: 90vh;
   text-transform: capitalize;
 }
 .poke-details img {
@@ -13,6 +15,10 @@
 }
 .poke-details h1 {
   margin-top: 40px;
+}
+
+.poke-info {
+  margin-left: 15px;
 }
 
 .error {

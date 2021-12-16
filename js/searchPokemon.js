@@ -10,7 +10,10 @@ class Pokemon {
     html() {
         const pokeDiv = document.querySelector('.poke-details');
         pokeDiv.innerHTML = `
+            <div class="poke-img">
              <img src="${this.image}" alt="${this.name}">
+             </div>
+             <div class="poke-info">
                     <h1>${this.name}</h1>
                     <hr>
                     <h2>Tipo</h2>
@@ -22,7 +25,7 @@ class Pokemon {
                     <ul>
                         <li>${this.abilities}</li>
                     </ul>
-             `
+             </div>`
         return pokeDiv;
     }
 }
@@ -46,8 +49,9 @@ async function getPokemonData(id) {
 const fakePromise = () => new Promise((resolve) => setTimeout(resolve, 3000));
 
 window.onload = async function () {
-    const { id } = getQueryParams();
+     const { id } = getQueryParams();
     const pokemonDiv = document.querySelector(".poke-details");
+    if (window.carrinho) carrinho();
     
     try{
         await fakePromise()
