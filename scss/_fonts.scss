@@ -1,6 +1,9 @@
-@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+@font-face {
+    font-family: 'Pokefont';
+    src: url('../src/fonts/Pokemon_Solid.ttf');
+  }
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 
-$pokeFont: 'Pokemon Solid', sans-serif;
+$pokeFont: 'Pokefont', sans-serif;
 $principalFont: "Press Start 2P", cursive

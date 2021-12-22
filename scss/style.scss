@@ -23,7 +23,7 @@ header {
             -webkit-text-stroke: 1px #3b4cca;
             font-size: 40px;
             margin-right: 50px;
-            font-family: "Pokemon Solid", sans-serif;
+            font-family: fonts.$pokeFont;
         }
     }
 
@@ -156,7 +156,7 @@ header .submenu nav ul li:last-child:last-child {
 }
 .content button {
     cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
+    font-family: fonts.$principalFont;
     border-radius: 50px;
     border-color: #7AC89E;
     background-color: #7AC89E;
@@ -316,11 +316,12 @@ aside .poke-ad .poke-ads-title {
 /*Rodapé*/
 footer {
     background-color: #000000;
-    font-family: fonts.$pokeFont;
+    font-family: fonts.$principalFont;
     nav{
         a{
             text-decoration: none;
             color: #FFF;
+            font-family: fonts.$pokeFont;
         }
     }
     .topPokemon {

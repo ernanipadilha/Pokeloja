@@ -1,6 +1,9 @@
 @charset "UTF-8";
-@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@font-face {
+  font-family: "Pokefont";
+  src: url("../src/fonts/Pokemon_Solid.ttf");
+}
 body.carrinho-aberto .poke-ads-description {
   opacity: 0.6;
 }
@@ -74,7 +77,7 @@ header .menu h1 {
   -webkit-text-stroke: 1px #3b4cca;
   font-size: 40px;
   margin-right: 50px;
-  font-family: "Pokemon Solid", sans-serif;
+  font-family: "Pokefont", sans-serif;
 }
 header .pokespin {
   background-image: url("../src/img/pokeball_3.png");
@@ -101,7 +104,7 @@ header .busca form {
   padding: 4px;
 }
 header .busca form > input {
-  font-family: "Pokemon Solid", sans-serif;
+  font-family: "Pokefont", sans-serif;
   height: 40px;
   font-size: 20px;
 }
@@ -132,7 +135,7 @@ header .links a {
   color: #edf6e9;
 }
 header .submenu {
-  font-family: "Pokemon Solid", sans-serif;
+  font-family: "Pokefont", sans-serif;
   font-size: 15px;
   background-color: #000;
   color: #fff;
@@ -370,11 +373,12 @@ aside .poke-ad .poke-ads-description {
 /*Rodapé*/
 footer {
   background-color: #000000;
-  font-family: "Pokemon Solid", sans-serif;
+  font-family: "Press Start 2P", cursive;
 }
 footer nav a {
   text-decoration: none;
   color: #FFF;
+  font-family: "Pokefont", sans-serif;
 }
 footer .topPokemon {
   color: #dfe5f2;
