@@ -78,8 +78,10 @@ header .menu h1 {
 }
 header .pokespin {
   background-image: url("../src/img/pokeball_3.png");
-  width: 180px;
-  height: 180px;
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
+  margin-top: 40px;
   padding: 10px;
   background-repeat: no-repeat;
   animation: pokespin 2s infinite linear;
