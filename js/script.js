@@ -4,6 +4,7 @@ async function getPokemons(page = 0) {
     pokeList.innerHTML = '<div class="pokeball"></div> <p>Carregando pokemon!!!</p>';
     
     const limit = 20;
+    pokemons = [];
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${limit * page}`);
     const json = await response.json();
@@ -72,12 +73,22 @@ async function listaPokemons(pokemonsApi) {
     pokeList.innerHTML = '';
 
     const pokemons = pokemonsApi.map((pokemon) => new Pokemons(pokemon.name, pokemon.url));
-
+    this.pokemons = pokemons;
     pokemons.forEach((pokemon) => {
         const html = pokemon.html();
         pokeList.appendChild(html)
     }
-    )
+    );
+
+    const buyPokemon = document.querySelectorAll('.poke-buy');
+    buyPokemon.forEach((btn) => {
+        btn.addEventListener('click',(event)=>{
+            event.preventDefault();
+            const id = event.target.getAttribute('data-id');
+            const pokemon = this.pokemons.find((pokemon) => pokemon.id == id);
+            window.carrinho.adicionar(pokemon);
+        })
+    })
 }
 
 // Executa quando a página termina de carregar.
@@ -90,6 +101,4 @@ window.onload = async () => {
     temAnterior(page);
     calcPages(page);
     btnAnt();
-    
-    if (window.carrinho) carrinho();
-}
+    }

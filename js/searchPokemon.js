@@ -51,8 +51,7 @@ const fakePromise = () => new Promise((resolve) => setTimeout(resolve, 3000));
 window.onload = async function () {
      const { id } = getQueryParams();
     const pokemonDiv = document.querySelector(".poke-details");
-    if (window.carrinho) carrinho();
-    
+        
     try{
         await fakePromise()
         const data = await getPokemonData(id);

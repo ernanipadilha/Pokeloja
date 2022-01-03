@@ -15,8 +15,9 @@ class Pokemons {
         <p>${this.nome}</p>
         <p class="oldValue">R$ ${this.preco}</p>
         <p>R$ ${(this.preco * 0.8).toFixed(2)}</p>
+        <button data-id="${this.id}" class="poke-buy">Comprar</button>
         </a>
-        <button>Comprar</button>
+        
         `;
 
         return pokeDiv;
