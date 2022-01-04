@@ -1,53 +1,84 @@
-body.carrinho-aberto{
-    .poke-ads-description{
-        opacity:  0.6;
+body.carrinho-aberto {
+    .poke-ads-description {
+        opacity: 0.6;
     }
-    .poke-ads-title{
-        opacity:  0.6;
+    .poke-ads-title {
+        opacity: 0.6;
     }
-    .pokespin{
-        opacity:  0.6;
+    .pokespin {
+        opacity: 0.6;
     }
-    .open-cart{
+    .open-cart {
         background-color: #000;
-        opacity:  0.5;
+        opacity: 0.5;
         margin: auto;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
         position: fixed;
-        }
-     .carrinho{
-    box-shadow: -4px 5px 12px 2px rgba($color: #000, $alpha: 0.62);
-    right: 0;
+    }
+    .carrinho {
+        box-shadow: -4px 5px 12px 2px rgba($color: #000, $alpha: 0.62);
+        right: 0;
     }
 }
-.carrinho{
+.carrinho {
     padding: 15px;
     position: fixed;
     top: 0;
-    right: -300px;
-    width: 300px;
-    height:  100vh;
-    background-color: #FFF;
-    transition: all ease .3s;
-    border: 1px solid #CCC;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: #fff;
+    transition: all ease 0.3s;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    button{
+    button {
         background: transparent;
         border: 0;
         font-size: 22px;
         font-weight: bold;
         cursor: pointer;
     }
-    h4{
+    h4 {
         font-size: 20px;
         margin: 0;
-
+    }
+    .add-poke {
+        
+        margin-top: 20px;
+        background-color: darkgray;
+        padding: 10px;
+    }
+    .poke-item-car{
+        width: 100px;
+        height: 100px;
+    }
+    .poke-car{
+        margin-top: 20px;
+        padding: 5px;
+    }
+    .poke-data{
+        display: flex;
+        div{
+            display: block;
+            text-align: center;
+            font-size: 10px;
+        }
+        h4{
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        p{
+            font-size: 11px;
+        }
+        button{
+            font-size: 12px;
+        }
     }
 }
+
 
