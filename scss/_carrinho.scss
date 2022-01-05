@@ -48,37 +48,50 @@ body.carrinho-aberto {
         margin: 0;
     }
     .add-poke {
-        
         margin-top: 20px;
         background-color: darkgray;
         padding: 10px;
     }
-    .poke-item-car{
+    .poke-item-car {
         width: 100px;
         height: 100px;
     }
-    .poke-car{
+    .poke-car {
         margin-top: 20px;
         padding: 5px;
     }
-    .poke-data{
+    .poke-data {
         display: flex;
-        div{
+        div {
             display: block;
             text-align: center;
             font-size: 10px;
         }
-        h4{
+        h4 {
             margin-top: 20px;
+            font-size: 10px;
+        }
+        .price {
+            margin-top: 20px;
+            font-size: 10px;
+        }
+        .qtd-item {
+            border: 2px solid black;
+            padding: 5px;
+        }
+        button {
             font-size: 12px;
         }
-        p{
-            font-size: 11px;
+        .item-value {
+            font-size: 10px;
+            margin: 5px 5px 0 5px;
         }
-        button{
+    }
+    .total-cart {
+        margin-top: 20px;
+        h4 {
+            margin-bottom: 8px;
             font-size: 12px;
         }
     }
 }
-
-

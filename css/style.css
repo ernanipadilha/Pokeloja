@@ -76,12 +76,28 @@ body.carrinho-aberto .carrinho {
 }
 .carrinho .poke-data h4 {
   margin-top: 20px;
-  font-size: 12px;
+  font-size: 10px;
 }
-.carrinho .poke-data p {
-  font-size: 11px;
+.carrinho .poke-data .price {
+  margin-top: 20px;
+  font-size: 10px;
+}
+.carrinho .poke-data .qtd-item {
+  border: 2px solid black;
+  padding: 5px;
 }
 .carrinho .poke-data button {
+  font-size: 12px;
+}
+.carrinho .poke-data .item-value {
+  font-size: 10px;
+  margin: 5px 5px 0 5px;
+}
+.carrinho .total-cart {
+  margin-top: 20px;
+}
+.carrinho .total-cart h4 {
+  margin-bottom: 8px;
   font-size: 12px;
 }
 
