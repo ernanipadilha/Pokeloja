@@ -31,12 +31,14 @@ class Carrinho {
         this.itens.push(pokemon);
 
         const pokemonsComprados = this.itens.map(
-            function(item){
+            function(item, index){
+                const qtdPokemons = index + 1;
+                console.log(qtdPokemons)
                 console.log(item.nome + ' ' + item.image + ' '+item.precoDesc);
-            return  `<div>${item.nome}<div>`           
-
-        })
-
+                return  `<div>${item.nome}<div>`           
+                
+            })
+            
     }
 
     //localStorage.setItem();
