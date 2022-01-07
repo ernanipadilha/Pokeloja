@@ -66,7 +66,7 @@ function btnAnt() {
         calcPages(page)
     }
 }
-const fakePromise = () => new Promise((resolve) => setTimeout(resolve, 3000));
+const fakePromise = () => new Promise((resolve) => setTimeout(resolve, 2000));
 async function listaPokemons(pokemonsApi) {
     await fakePromise();
     const pokeList = document.querySelector('.content');

@@ -68,6 +68,7 @@ body.carrinho-aberto .carrinho {
 }
 .carrinho .poke-data {
   display: flex;
+  justify-content: space-between;
 }
 .carrinho .poke-data div {
   display: block;
@@ -204,7 +205,8 @@ header .submenu {
   transition: all ease 0.2s;
 }
 
-.submenu ul, li {
+.submenu ul,
+li {
   display: flex;
   margin: 0;
   padding: 0;
@@ -221,12 +223,10 @@ header .submenu nav ul li:last-child:last-child {
 
 .content {
   background-color: #edf6e9;
-  justify-content: center;
   font-size: 15px;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
   align-content: center;
 }
 .content a {
@@ -234,12 +234,9 @@ header .submenu nav ul li:last-child:last-child {
   color: #000;
 }
 .content .poke {
-  display: grid;
-  justify-content: center;
   border: 2px solid #000;
   border-radius: 20px;
   margin: 5px;
-  height: 400px;
   padding: 10px;
   text-align: center;
   text-transform: capitalize;
@@ -260,8 +257,8 @@ header .submenu nav ul li:last-child:last-child {
   border-radius: 50px;
   width: 215px;
   height: 50px;
-  border-color: #7AC89E;
-  background-color: #7AC89E;
+  border-color: #7ac89e;
+  background-color: #7ac89e;
   font-size: 20px;
   transition: 3s;
 }
@@ -295,12 +292,12 @@ header .submenu nav ul li:last-child:last-child {
   padding: 10px;
   font-size: 20px;
   margin-top: 10px;
-  background-color: #DDD;
+  background-color: #ddd;
 }
 
 /*Lateral*/
 .sidenav {
-  background-color: #DFE5F2;
+  background-color: #dfe5f2;
   padding: 15px;
   width: 400px;
 }
@@ -333,7 +330,7 @@ aside .poke-ad > div {
   position: absolute;
   bottom: 0;
   left: 0;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   padding: 10px;
   width: 100%;
@@ -352,7 +349,7 @@ aside .poke-ad .poke-ads-description {
 .topPokemon h3 {
   text-transform: uppercase;
   font-weight: bold;
-  border-bottom: solid 1px #DDD;
+  border-bottom: solid 1px #ddd;
   padding: 10px 0;
   margin: 0;
 }
@@ -372,13 +369,13 @@ aside .poke-ad .poke-ads-description {
   display: flex;
   align-items: center;
   padding: 10px;
-  border-bottom: solid 1px #EEE;
+  border-bottom: solid 1px #eee;
   transition: all ease 0.3s;
   cursor: pointer;
 }
 
 .topPokemon li:hover {
-  background: #EEE;
+  background: #eee;
 }
 
 .topPokemon li::before {
@@ -394,7 +391,7 @@ aside .poke-ad .poke-ads-description {
   margin-top: 30px;
   padding: 30px 10px;
   margin-left: 20px;
-  background-color: #FCF3E4;
+  background-color: #fcf3e4;
 }
 
 .novidades h4 {
@@ -416,7 +413,7 @@ aside .poke-ad .poke-ads-description {
   padding: 10px;
   width: 100%;
   background: #000;
-  color: #FFF;
+  color: #fff;
   margin-top: 15px;
 }
 
@@ -427,7 +424,7 @@ footer {
 }
 footer nav a {
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   font-family: "Pokefont", sans-serif;
 }
 footer .topPokemon {
@@ -447,16 +444,16 @@ footer .topPokemon li:hover {
 }
 .social-links a {
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
 }
 .social-links ul {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
 }
 .social-links li {
   text-decoration: none;
   margin-left: 15px;
-  color: #FFF;
+  color: #fff;
 }
 
 .pokeball {

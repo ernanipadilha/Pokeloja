@@ -28,7 +28,7 @@ header {
     }
 
     .pokespin {
-        background-image: url('../src/img/pokeball_3.png');
+        background-image: url("../src/img/pokeball_3.png");
         width: 100px;
         height: 100px;
         background-size: 100px;
@@ -90,8 +90,7 @@ header {
         background-color: #000;
         color: #fff;
         padding: 15px 0;
-       }
-
+    }
 }
 .submenu li {
     margin-left: 5px;
@@ -106,7 +105,8 @@ header {
     text-transform: uppercase;
     transition: all ease 0.2s;
 }
-.submenu ul, li {
+.submenu ul,
+li {
     display: flex;
     margin: 0;
     padding: 0;
@@ -122,26 +122,20 @@ header .submenu nav ul li:last-child:last-child {
 
 .content {
     background-color: #edf6e9;
-    justify-content: center;
     font-size: 15px;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
     align-content: center;
-
-    a{
+    a {
         text-decoration: none;
         color: #000;
     }
 
     .poke {
-        display: grid;
-        justify-content: center;
         border: 2px solid #000;
         border-radius: 20px;
         margin: 5px;
-        height: 400px;
         padding: 10px;
         text-align: center;
         text-transform: capitalize;
@@ -151,9 +145,8 @@ header .submenu nav ul li:last-child:last-child {
         text-decoration: line-through;
         opacity: 0.5;
     }
-    
 }
-.content img{
+.content img {
     max-width: 225px;
 }
 .content button {
@@ -162,12 +155,12 @@ header .submenu nav ul li:last-child:last-child {
     border-radius: 50px;
     width: 215px;
     height: 50px;
-    border-color: #7AC89E;
-    background-color: #7AC89E;
+    border-color: #7ac89e;
+    background-color: #7ac89e;
     font-size: 20px;
     transition: 3s;
 }
-.content button:hover{
+.content button:hover {
     transition: 3s;
     background-color: #cc0000;
     border-color: #cc0000;
@@ -185,35 +178,34 @@ header .submenu nav ul li:last-child:last-child {
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
-    button{
+    button {
         cursor: pointer;
         padding: 10px 20px;
         border: 0;
         font-size: 15px;
     }
-    .pages{
+    .pages {
         padding: 10px;
         font-size: 20px;
         margin-top: 10px;
-        background-color: #DDD;
+        background-color: #ddd;
     }
 }
 
 /*Lateral*/
 .sidenav {
-    background-color: #DFE5F2;
+    background-color: #dfe5f2;
     padding: 15px;
     width: 400px;
 }
 
 aside {
     padding-left: 30px;
-    
 }
 aside .poke-ad {
     display: block;
     height: 250px;
-    background-image: url('../src/img/mewtwo.jpg');
+    background-image: url("../src/img/mewtwo.jpg");
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -228,11 +220,11 @@ aside .poke-ad::before {
     top: 0;
     left: 0;
 }
-aside .poke-ad>div {
+aside .poke-ad > div {
     position: absolute;
     bottom: 0;
     left: 0;
-    color: #FFF;
+    color: #fff;
     text-align: center;
     padding: 10px;
     width: 100%;
@@ -242,14 +234,14 @@ aside .poke-ad .poke-ads-title {
     font-weight: bold;
     margin: 0;
 }
-  aside .poke-ad .poke-ads-description {
+aside .poke-ad .poke-ads-description {
     font-size: 12px;
 }
 
 .topPokemon h3 {
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: solid 1px #DDD;
+    border-bottom: solid 1px #ddd;
     padding: 10px 0;
     margin: 0;
 }
@@ -269,13 +261,13 @@ aside .poke-ad .poke-ads-title {
     display: flex;
     align-items: center;
     padding: 10px;
-    border-bottom: solid 1px #EEE;
+    border-bottom: solid 1px #eee;
     transition: all ease 0.3s;
     cursor: pointer;
 }
 
 .topPokemon li:hover {
-    background: #EEE;
+    background: #eee;
 }
 
 .topPokemon li::before {
@@ -291,7 +283,7 @@ aside .poke-ad .poke-ads-title {
     margin-top: 30px;
     padding: 30px 10px;
     margin-left: 20px;
-    background-color: #FCF3E4;
+    background-color: #fcf3e4;
 }
 
 .novidades h4 {
@@ -313,7 +305,7 @@ aside .poke-ad .poke-ads-title {
     padding: 10px;
     width: 100%;
     background: #000;
-    color: #FFF;
+    color: #fff;
     margin-top: 15px;
 }
 
@@ -321,10 +313,10 @@ aside .poke-ad .poke-ads-title {
 footer {
     background-color: #000000;
     font-family: fonts.$principalFont;
-    nav{
-        a{
+    nav {
+        a {
             text-decoration: none;
-            color: #FFF;
+            color: #fff;
             font-family: fonts.$pokeFont;
         }
     }
@@ -333,39 +325,37 @@ footer {
         li {
             font-size: 20px;
             &:hover {
-                
                 color: #000;
                 background-color: #dfe5f2;
             }
         }
     }
-  
-  }
+}
 
 .social-links {
     display: flex;
     height: 40px;
 
-    a{
+    a {
         text-decoration: none;
-        color: #FFF;
+        color: #fff;
     }
-    ul{
-        color: #FFF;
+    ul {
+        color: #fff;
         text-decoration: none;
     }
     li {
         text-decoration: none;
         margin-left: 15px;
-        color: #FFF;
+        color: #fff;
     }
 }
 .pokeball {
-    background-image: url('../src/img/charmander-ian-boschero.gif');
+    background-image: url("../src/img/charmander-ian-boschero.gif");
     background-color: #edf6e9;
     background-size: 150px;
     width: 150px;
     height: 150px;
     padding: 10px;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
 }

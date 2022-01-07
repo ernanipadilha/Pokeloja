@@ -62,6 +62,7 @@ body.carrinho-aberto {
     }
     .poke-data {
         display: flex;
+        justify-content: space-between;
         div {
             display: block;
             text-align: center;
