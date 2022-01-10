@@ -55,7 +55,7 @@ class Carrinho {
             <p class="qtd-item">1</p>
             <button>Excluir</button>
             </div>
-            <p class="price">R$ ${pokemon.precoDesc}</p>
+            <p class="price">R$ ${ pokemon.precoDesc}</p>
             `
             pokeCar.appendChild(pokeItem);
                         
@@ -63,7 +63,7 @@ class Carrinho {
             pokeTotal.className = 'total-cart';
             pokeTotal.innerHTML = ` 
             <h4>Total itens: ${qtdPoke}</h4>
-            <h4>Valor total: R$ ${precoTotal}</h4>
+            <h4>Valor total: R$ ${(precoTotal).toFixed(2)}</h4>
         `
             
             pokeTotais.innerHTML = '';
