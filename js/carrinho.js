@@ -30,10 +30,10 @@ class Carrinho {
 
     adicionar(pokemon) {
         this.itens.push(pokemon);
-        this.renderCarrinho(pokemon);
+        this.renderCarrinho(this.itens);
     }
 
-    renderCarrinho(pokemon) {
+    renderCarrinho() {
         let pokeCar = document.querySelector('.poke-car');
         pokeCar.innerHTML = '';
 
@@ -70,8 +70,9 @@ class Carrinho {
             pokeTotais.appendChild(pokeTotal);
         });
 
-        // localStorage.setItem("Carrinho", pokemonsComprados);
-        // console.log(localStorage);
+         localStorage.setItem("DadosPokemon", JSON.stringify(window.carrinho.itens));
+         localStorage.getItem("DadosPokemon",JSON.stringify(window.carrinho.itens));
+         console.log(localStorage);
 
     }
 }
@@ -87,5 +88,5 @@ Abrir o carrinho
 
 window.addEventListener('load', async () => {
     window.carrinho = new Carrinho();
-
+    
 })  
