@@ -2,6 +2,7 @@ class Carrinho {
     btnCarrinho = document.querySelector('#botao-carrinho');
     btnFecharCarrinho = document.querySelector('#fechar-carrinho');
     clickForaCart = document.querySelector('.open-cart');
+    meuStorage = localStorage;
     itens = [];
     total = 0;
     constructor() {
@@ -27,54 +28,51 @@ class Carrinho {
         event.preventDefault();
         document.body.className = '';
     }
-
+    
     adicionar(pokemon) {
         this.itens.push(pokemon);
         this.renderCarrinho(this.itens);
     }
 
     renderCarrinho() {
-        let pokeCar = document.querySelector('.poke-car');
+        const pokeCar = document.querySelector('.poke-car');
         pokeCar.innerHTML = '';
 
-        let pokeTotais = document.querySelector('.poke-total')
+        const pokeTotais = document.querySelector('.poke-total')
         pokeTotais.innerHTML = '';
         let precoTotal = 0;
-        let pokemonsComprados = this.itens.map(function (pokemon, index) {
+        let pokemonsComprados = this.itens.map(function (itens, index) {
             const qtdPoke = index + 1;
-             precoTotal = precoTotal + parseFloat(pokemon.precoDesc);
+            precoTotal = precoTotal + parseFloat(itens.precoDesc);
             console.log(precoTotal)
             const pokeItem = document.createElement('div');
             pokeItem.className = 'poke-data'
             pokeItem.innerHTML = `
             <img class="poke-item-car"
-            src="${pokemon.image}"
-            alt="${pokemon.nome}">
-            <h4>${pokemon.nome}</h4>
+            src="${itens.image}"
+            alt="${itens.nome}">
+            <h4>${itens.nome}</h4>
             <div class="item-value">
             <p class="qtd-item">1</p>
             <button>Excluir</button>
             </div>
-            <p class="price">R$ ${ pokemon.precoDesc}</p>
-            `
+            <p class="price">R$ ${itens.precoDesc}</p>`
             pokeCar.appendChild(pokeItem);
-                        
+
             const pokeTotal = document.createElement('div');
             pokeTotal.className = 'total-cart';
             pokeTotal.innerHTML = ` 
             <h4>Total itens: ${qtdPoke}</h4>
-            <h4>Valor total: R$ ${(precoTotal).toFixed(2)}</h4>
-        `
-            
+            <h4>Valor total: R$ ${(precoTotal).toFixed(2)}</h4>`
+
             pokeTotais.innerHTML = '';
             pokeTotais.appendChild(pokeTotal);
         });
 
-         localStorage.setItem("DadosPokemon", JSON.stringify(window.carrinho.itens));
-         localStorage.getItem("DadosPokemon",JSON.stringify(window.carrinho.itens));
-         console.log(localStorage);
+        // localStorage.getItem("DadosPokemon",JSON.stringify(window.carrinho.itens));
 
     }
+
 }
 
 /*
@@ -88,5 +86,4 @@ Abrir o carrinho
 
 window.addEventListener('load', async () => {
     window.carrinho = new Carrinho();
-    
-})  
+});
