@@ -2,17 +2,20 @@ class Carrinho {
     btnCarrinho = document.querySelector('#botao-carrinho');
     btnFecharCarrinho = document.querySelector('#fechar-carrinho');
     clickForaCart = document.querySelector('.open-cart');
+    removerPoke = document.querySelector('.removerPokemon');
     meuStorage = localStorage;
     total = 0;
-
+    
     constructor() {
         this.btnCarrinho.addEventListener('click', this.abrirCarrinho);
         this.btnFecharCarrinho.addEventListener('click', this.fecharCarrinho);
         this.clickForaCart.addEventListener('click', this.fecharCarrinho);
+        this.removerPoke.addEventListener('click', this.removerPokemon);
     }
-
+    
     abrirCarrinho(event) {
         event.preventDefault();
+            
         window.carrinho.renderCarrinho();
         const openCartClass = 'carrinho-aberto'
         document.body.className.includes(openCartClass) ? document.body.className = '' : document.body.className = openCartClass;
@@ -23,7 +26,11 @@ class Carrinho {
                 document.body.className = 'carrinho-aberto';
             }
         });
+    }
 
+    removerPokemon(event){
+        event.preventDefault();
+        console.log("Clicou aqui")
     }
 
     fecharCarrinho(event) {
@@ -33,11 +40,12 @@ class Carrinho {
 
     adicionar(pokemon) {
         this.populateStorage(pokemon);
+        this.renderCarrinho();
     }
 
     renderCarrinho() {
         const pokemons = this.getStorage();
-        
+
         const pokeCar = document.querySelector('.poke-car');
         pokeCar.innerHTML = '';
 
@@ -47,7 +55,6 @@ class Carrinho {
         let pokemonsComprados = pokemons.map((itens, index) => {
             const qtdPoke = index + 1;
             precoTotal = precoTotal + parseFloat(itens.precoDesc);
-            console.log(precoTotal);
             const pokeItem = document.createElement('div');
             pokeItem.className = 'poke-data';
             pokeItem.innerHTML = `
@@ -57,7 +64,7 @@ class Carrinho {
             <h4>${itens.nome}</h4>
             <div class="item-value">
             <p class="qtd-item">1</p>
-            <button>Excluir</button>
+            <button data-id="${itens.id}" class="removerPokemon">Excluir</button>
             </div>
             <p class="price">R$ ${itens.precoDesc}</p>`;
             pokeCar.appendChild(pokeItem);
@@ -95,5 +102,5 @@ Abrir o carrinho
 
 window.addEventListener('load', async () => {
     window.carrinho = new Carrinho();
-
+    window.carrinho.renderCarrinho();
 });
