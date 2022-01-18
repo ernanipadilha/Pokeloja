@@ -2,22 +2,20 @@ class Carrinho {
     btnCarrinho = document.querySelector('#botao-carrinho');
     btnFecharCarrinho = document.querySelector('#fechar-carrinho');
     clickForaCart = document.querySelector('.open-cart');
-    removerPoke = document.querySelector('.removerPokemon');
     meuStorage = localStorage;
     total = 0;
-    
+
     constructor() {
         this.btnCarrinho.addEventListener('click', this.abrirCarrinho);
         this.btnFecharCarrinho.addEventListener('click', this.fecharCarrinho);
         this.clickForaCart.addEventListener('click', this.fecharCarrinho);
-        this.removerPoke.addEventListener('click', this.removerPokemon);
+
     }
-    
+
     abrirCarrinho(event) {
         event.preventDefault();
-            
         window.carrinho.renderCarrinho();
-        const openCartClass = 'carrinho-aberto'
+        const openCartClass = 'carrinho-aberto';
         document.body.className.includes(openCartClass) ? document.body.className = '' : document.body.className = openCartClass;
         addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
@@ -28,7 +26,7 @@ class Carrinho {
         });
     }
 
-    removerPokemon(event){
+    removerPokemon(event) {
         event.preventDefault();
         console.log("Clicou aqui")
     }
@@ -78,6 +76,14 @@ class Carrinho {
             pokeTotais.innerHTML = '';
             pokeTotais.appendChild(pokeTotal);
         });
+        const removerPoke = document.querySelectorAll('.removerPokemon');
+        removerPoke.forEach((btn) => {
+            btn.addEventListener('click', (event) => {
+                event.preventDefault();
+                const id = event.target.getAttribute('data-id');
+                console.log("Clicou aqui no pokemon -> " + id);
+            });
+        });
     }
 
     populateStorage(pokemon) {
@@ -102,5 +108,4 @@ Abrir o carrinho
 
 window.addEventListener('load', async () => {
     window.carrinho = new Carrinho();
-    window.carrinho.renderCarrinho();
 });
