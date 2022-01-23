@@ -1,100 +1,133 @@
 class Carrinho {
-    btnCarrinho = document.querySelector('#botao-carrinho');
-    btnFecharCarrinho = document.querySelector('#fechar-carrinho');
-    clickForaCart = document.querySelector('.open-cart');
-    meuStorage = localStorage;
-    total = 0;
+  btnCarrinho = document.querySelector('#botao-carrinho')
+  btnFecharCarrinho = document.querySelector('#fechar-carrinho')
+  clickForaCart = document.querySelector('.open-cart')
+  //meuStorage = this.getStorage();
+  total = 0
 
-    constructor() {
-        this.btnCarrinho.addEventListener('click', this.abrirCarrinho);
-        this.btnFecharCarrinho.addEventListener('click', this.fecharCarrinho);
-        this.clickForaCart.addEventListener('click', this.fecharCarrinho);
+  constructor() {
+    this.btnCarrinho.addEventListener('click', this.abrirCarrinho)
+    this.btnFecharCarrinho.addEventListener('click', this.fecharCarrinho)
+    this.clickForaCart.addEventListener('click', this.fecharCarrinho)
+    this.meuStorage = this.getStorage()
+  }
 
-    }
+  abrirCarrinho(event) {
+    event.preventDefault()
+    window.carrinho.renderCarrinho()
+    const openCartClass = 'carrinho-aberto'
+    document.body.className.includes(openCartClass)
+      ? (document.body.className = '')
+      : (document.body.className = openCartClass)
+    addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        document.body.className = ''
+      } else if (event.key === '!') {
+        document.body.className = 'carrinho-aberto'
+        window.carrinho.renderCarrinho()
+      }
+    })
+  }
 
-    abrirCarrinho(event) {
-        event.preventDefault();
-        window.carrinho.renderCarrinho();
-        const openCartClass = 'carrinho-aberto';
-        document.body.className.includes(openCartClass) ? document.body.className = '' : document.body.className = openCartClass;
-        addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                document.body.className = '';
-            } else if (event.key === '!') {
-                document.body.className = 'carrinho-aberto';
-            }
-        });
-    }
+  fecharCarrinho(event) {
+    event.preventDefault()
+    document.body.className = ''
+  }
 
-    removerPokemon(event) {
-        event.preventDefault();
-        console.log("Clicou aqui")
-    }
+  adicionar(pokemon) {
+    this.populateStorage(pokemon)
+    document.body.className = 'carrinho-aberto'
+    this.renderCarrinho()
+  }
 
-    fecharCarrinho(event) {
-        event.preventDefault();
-        document.body.className = '';
-    }
+  renderCarrinho() {
+    const pokemonsNoCarrinho = this.getStorage()
 
-    adicionar(pokemon) {
-        this.populateStorage(pokemon);
-        this.renderCarrinho();
-    }
+    const pokeCar = document.querySelector('.poke-car')
+    pokeCar.innerHTML = ''
 
-    renderCarrinho() {
-        const pokemons = this.getStorage();
+    const pokeTotais = document.querySelector('.poke-total')
+    pokeTotais.innerHTML = ''
+    let precoTotal = 0
+    const pokemonsAlreadyAdded = []
 
-        const pokeCar = document.querySelector('.poke-car');
-        pokeCar.innerHTML = '';
+    pokemonsNoCarrinho.map((itens) => {
+      const pokemonExist = pokemonsAlreadyAdded.find(
+        (pokemon) => pokemon.id == itens.id,
+      )
 
-        const pokeTotais = document.querySelector('.poke-total')
-        pokeTotais.innerHTML = '';
-        let precoTotal = 0;
-        let pokemonsComprados = pokemons.map((itens, index) => {
-            const qtdPoke = index + 1;
-            precoTotal = precoTotal + parseFloat(itens.precoDesc);
-            const pokeItem = document.createElement('div');
-            pokeItem.className = 'poke-data';
-            pokeItem.innerHTML = `
-            <img class="poke-item-car"
-            src="${itens.image}"
-            alt="${itens.nome}">
-            <h4>${itens.nome}</h4>
-            <div class="item-value">
-            <p class="qtd-item">1</p>
-            <button data-id="${itens.id}" class="removerPokemon">Excluir</button>
-            </div>
-            <p class="price">R$ ${itens.precoDesc}</p>`;
-            pokeCar.appendChild(pokeItem);
+      if (pokemonExist) {
+        pokemonExist.qtd = pokemonExist.qtd + 1
+        pokemonsAlreadyAdded.push(pokemonExist)
+        this.updatePokemonQtd(pokemonExist.id, pokemonExist.qtd)
+      } else {
+        pokemonsAlreadyAdded.push({ id: itens.id, qtd: 1 })
+        pokeCar.appendChild(this.createPokemonItem(itens))
+      }
 
-            const pokeTotal = document.createElement('div');
-            pokeTotal.className = 'total-cart';
-            pokeTotal.innerHTML = ` 
-            <h4>Total itens: ${qtdPoke}</h4>
-            <h4>Valor total: R$ ${(precoTotal).toFixed(2)}</h4>`;
+      precoTotal = precoTotal + parseFloat(itens.precoDesc)
+    })
 
-            pokeTotais.innerHTML = '';
-            pokeTotais.appendChild(pokeTotal);
-        });
-        const removerPoke = document.querySelectorAll('.removerPokemon');
-        removerPoke.forEach((btn) => {
-            btn.addEventListener('click', (event) => {
-                event.preventDefault();
-                const id = event.target.getAttribute('data-id');
-                console.log("Clicou aqui no pokemon -> " + id);
-            });
-        });
-    }
+    pokeTotais.appendChild(
+      this.addDetails(pokemonsNoCarrinho.length, precoTotal),
+    )
+  }
 
-    populateStorage(pokemon) {
-        const pokemons = this.getStorage() || [];
-        pokemons.push(pokemon);
-        localStorage.setItem("pokemonsNoCarrinho", JSON.stringify(pokemons));
-    }
+  updatePokemonQtd(pokemonId, pokemonQtd) {
+    const qtdElement = document.querySelector(`.qtd-item-${pokemonId}`)
+    qtdElement.innerHTML = pokemonQtd
+  }
 
-    getStorage() {
-        return JSON.parse(localStorage.getItem("pokemonsNoCarrinho"));
-    }
+  removePokemonItem(pokemonId) {
+    const pokemonsNoCarrinho = this.getStorage()
+    const findPoke = pokemonsNoCarrinho.filter(
+      (pokemonsNoCarrinho) => pokemonsNoCarrinho.id != pokemonId,
+    )
+
+    this.deleteStorage(findPoke)
+    this.renderCarrinho()
+  }
+
+  createPokemonItem(item) {
+    const pokeItem = document.createElement('div')
+    pokeItem.className = 'poke-data'
+    pokeItem.innerHTML = `
+        <img class="poke-item-car"
+        src="${item.image}"
+        alt="${item.nome}">
+        <h4>${item.nome}</h4>
+        <div class="item-value">
+        <p class="qtd-item qtd-item-${item.id}">1</p>
+        <button  onClick="window.carrinho.removePokemonItem(${item.id})" class="removerPokemon">Excluir</button>
+        </div>
+        <p class="price">R$ ${item.precoDesc}</p>`
+
+    return pokeItem
+  }
+
+  addDetails(totalItens, precoTotal) {
+    const pokeTotal = document.createElement('div')
+    pokeTotal.className = 'total-cart'
+    pokeTotal.innerHTML = ` 
+        <h4>Total itens: ${totalItens}</h4>
+        <h4>Valor total: R$ ${precoTotal.toFixed(2)}</h4>`
+
+    return pokeTotal
+  }
+
+  deleteStorage(findPoke) {
+    localStorage.setItem('pokemonsNoCarrinho', JSON.stringify(findPoke))
+  }
+
+  populateStorage(pokemon) {
+    const pokemons = this.getStorage() || []
+    pokemons.push(pokemon)
+    localStorage.setItem('pokemonsNoCarrinho', JSON.stringify(pokemons))
+  }
+
+  getStorage() {
+    return JSON.parse(localStorage.getItem('pokemonsNoCarrinho'))
+  }
 }
 
 /*
@@ -107,5 +140,5 @@ Abrir o carrinho
 */
 
 window.addEventListener('load', async () => {
-    window.carrinho = new Carrinho();
-});
+  window.carrinho = new Carrinho()
+})
