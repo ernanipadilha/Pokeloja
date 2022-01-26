@@ -51,26 +51,27 @@ class Carrinho {
     let precoTotal = 0
     const pokemonsAlreadyAdded = []
 
-    pokemonsNoCarrinho.map((itens) => {
-      const pokemonExist = pokemonsAlreadyAdded.find(
-        (pokemon) => pokemon.id == itens.id,
+    if (pokemonsNoCarrinho) {
+      pokemonsNoCarrinho.map((itens) => {
+        const pokemonExist = pokemonsAlreadyAdded.find(
+          (pokemon) => pokemon.id == itens.id,
+        )
+        if (pokemonExist) {
+          pokemonExist.qtd = pokemonExist.qtd + 1
+          pokemonsAlreadyAdded.push(pokemonExist)
+          this.updatePokemonQtd(pokemonExist.id, pokemonExist.qtd)
+        } else {
+          pokemonsAlreadyAdded.push({ id: itens.id, qtd: 1 })
+          pokeCar.appendChild(this.createPokemonItem(itens))
+        }
+
+        precoTotal = precoTotal + parseFloat(itens.precoDesc)
+      })
+
+      pokeTotais.appendChild(
+        this.addDetails(pokemonsNoCarrinho.length, precoTotal),
       )
-
-      if (pokemonExist) {
-        pokemonExist.qtd = pokemonExist.qtd + 1
-        pokemonsAlreadyAdded.push(pokemonExist)
-        this.updatePokemonQtd(pokemonExist.id, pokemonExist.qtd)
-      } else {
-        pokemonsAlreadyAdded.push({ id: itens.id, qtd: 1 })
-        pokeCar.appendChild(this.createPokemonItem(itens))
-      }
-
-      precoTotal = precoTotal + parseFloat(itens.precoDesc)
-    })
-
-    pokeTotais.appendChild(
-      this.addDetails(pokemonsNoCarrinho.length, precoTotal),
-    )
+    }
   }
 
   updatePokemonQtd(pokemonId, pokemonQtd) {
