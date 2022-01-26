@@ -1,98 +1,133 @@
 body.carrinho-aberto {
-    .poke-ads-description {
-        opacity: 0.6;
-    }
-    .poke-ads-title {
-        opacity: 0.6;
-    }
-    .pokespin {
-        opacity: 0.6;
-    }
-    .open-cart {
-        background-color: #000;
-        opacity: 0.5;
-        margin: auto;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-    }
-    .carrinho {
-        box-shadow: -4px 5px 12px 2px rgba($color: #000, $alpha: 0.62);
-        right: 0;
-    }
+  .poke-ads-description {
+    opacity: 0.6;
+  }
+  .poke-ads-title {
+    opacity: 0.6;
+  }
+  .pokespin {
+    opacity: 0.6;
+  }
+  .open-cart {
+    background-color: #000;
+    opacity: 0.5;
+    margin: auto;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+  }
+  .carrinho {
+    box-shadow: -4px 5px 12px 2px rgba($color: #000, $alpha: 0.62);
+    right: 0;
+  }
 }
 .carrinho {
-    padding: 15px;
-    position: fixed;
-    top: 0;
-    right: -400px;
-    width: 400px;
-    height: 100vh;
-    background-color: #fff;
-    transition: all ease 0.3s;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    align-items: flex-start;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background-color: #fff;
+  transition: all ease 0.3s;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow-y: scroll;
+  button {
+    background: transparent;
+    border: 0;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  h4 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .add-poke {
+    margin-top: 20px;
+    background-color: darkgray;
+    padding: 10px;
+  }
+  .poke-item-car {
+    width: 100px;
+    height: 100px;
+  }
+  .poke-car {
+    margin-top: 20px;
+    padding: 5px;
+  }
+  .poke-data {
+    display: flex;
     justify-content: space-between;
-    button {
-        background: transparent;
-        border: 0;
-        font-size: 22px;
-        font-weight: bold;
-        cursor: pointer;
+    div {
+      display: block;
+      text-align: center;
+      font-size: 10px;
     }
     h4 {
-        font-size: 20px;
-        margin: 0;
+      margin-top: 20px;
+      font-size: 10px;
     }
-    .add-poke {
-        margin-top: 20px;
-        background-color: darkgray;
-        padding: 10px;
+    .price {
+      margin-top: 20px;
+      font-size: 10px;
     }
-    .poke-item-car {
-        width: 100px;
-        height: 100px;
+    .qtd-item {
+      border: 2px solid black;
+      padding: 5px;
     }
-    .poke-car {
-        margin-top: 20px;
-        padding: 5px;
+    button {
+      font-size: 12px;
     }
-    .poke-data {
-        display: flex;
-        justify-content: space-between;
-        div {
-            display: block;
-            text-align: center;
-            font-size: 10px;
-        }
-        h4 {
-            margin-top: 20px;
-            font-size: 10px;
-        }
-        .price {
-            margin-top: 20px;
-            font-size: 10px;
-        }
-        .qtd-item {
-            border: 2px solid black;
-            padding: 5px;
-        }
-        button {
-            font-size: 12px;
-        }
-        .item-value {
-            font-size: 10px;
-            margin: 5px 5px 0 5px;
-        }
+    .item-value {
+      font-size: 10px;
+      margin: 5px 5px 0 5px;
     }
-    .total-cart {
-        margin-top: 20px;
-        h4 {
-            margin-bottom: 8px;
-            font-size: 12px;
-        }
+  }
+  .total-cart {
+    margin-top: 20px;
+    h4 {
+      margin-bottom: 8px;
+      font-size: 12px;
     }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e15a37;
+  border: 0px none #ffffff;
+  border-radius: 48px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

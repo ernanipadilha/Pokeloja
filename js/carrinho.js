@@ -41,7 +41,7 @@ class Carrinho {
   }
 
   renderCarrinho() {
-    const pokemonsNoCarrinho = this.getStorage()
+    const pokemonsNoCarrinho = this.getStorage() || []
 
     const pokeCar = document.querySelector('.poke-car')
     pokeCar.innerHTML = ''
@@ -51,7 +51,7 @@ class Carrinho {
     let precoTotal = 0
     const pokemonsAlreadyAdded = []
 
-    if (pokemonsNoCarrinho) {
+    if (pokemonsNoCarrinho.length > 0) {
       pokemonsNoCarrinho.map((itens) => {
         const pokemonExist = pokemonsAlreadyAdded.find(
           (pokemon) => pokemon.id == itens.id,
@@ -71,6 +71,11 @@ class Carrinho {
       pokeTotais.appendChild(
         this.addDetails(pokemonsNoCarrinho.length, precoTotal),
       )
+    } else {
+      const pokeItem = document.createElement('div')
+      pokeItem.className = 'poke-data'
+      pokeItem.innerHTML = `<h4>Não há pokemóns no carrinho!!</h4>`
+      pokeCar.appendChild(pokeItem)
     }
   }
 
